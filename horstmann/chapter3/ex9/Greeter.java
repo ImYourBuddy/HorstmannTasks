@@ -21,7 +21,7 @@ public class Greeter implements Runnable{
         Greeter greeterSecond = new Greeter(10, "Marie");
         Thread firstThread = new Thread(greeterFirst);
         Thread secondThread = new Thread(greeterSecond);
-        firstThread.run();
-        secondThread.run();
+        firstThread.start();
+        secondThread.start();
     }
 }
