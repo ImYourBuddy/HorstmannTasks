@@ -20,6 +20,7 @@ public class Employee implements Measurable {
         return salary;
     }
 
+    @Override
     public double average(Measurable[] objects) {
         double averageValue = 0;
         for (Measurable employee : objects) {
@@ -29,6 +30,7 @@ public class Employee implements Measurable {
         return averageValue;
     }
 
+    @Override
     public Measurable largest(Measurable[] objects) {
         Employee highestPaid = new Employee(Double.MIN_VALUE);
         for (Measurable employee : objects) {
