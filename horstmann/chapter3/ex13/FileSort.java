@@ -14,14 +14,6 @@ public class FileSort {
                     return f1.compareTo(f2);
                 }
             }
-//            else if (f1.isFile()) {
-//                if (f2.isDirectory()) {
-//                    return 1;
-//                }
-//                if (f2.isFile()) {
-//                    return f1.compareTo(f2);
-//                }
-//            }
             if (f2.isDirectory()) {
                 return 1;
             }
