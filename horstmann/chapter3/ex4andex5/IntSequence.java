@@ -39,17 +39,6 @@ public class IntSequence implements Sequence {
     }
 
     public static Sequence constant(int value) {
-        Sequence sequence = new Sequence() {
-            @Override
-            public boolean hasNext() {
-                return true;
-            }
-
-            @Override
-            public int next() {
-                return value;
-            }
-        };
-        return sequence;
+        return () -> value;
     }
 }
