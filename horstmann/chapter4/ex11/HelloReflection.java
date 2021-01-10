@@ -18,12 +18,14 @@ public class HelloReflection {
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
-        try {
-            method.invoke(field.get(null), "Hello, World!");
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
+        if (method != null) {
+            try {
+                method.invoke(field.get(null), "Hello, World!");
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
         }
 
     }
