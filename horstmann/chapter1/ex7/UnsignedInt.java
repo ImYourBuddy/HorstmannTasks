@@ -1,5 +1,9 @@
 package com.mycompany.horstmann.chapter1.ex7;
 
+/**
+ * This class describes operations on unsigned int. Negative numbers correspond to positive numbers greater than
+ * Integer.MAX_VALUE
+ */
 public class UnsignedInt {
     private int firstValue;
     private int secondValue;
@@ -9,43 +13,41 @@ public class UnsignedInt {
         this.secondValue = Integer.parseUnsignedInt(secondValue);
     }
 
-    public int getFirstValue() {
-        return firstValue;
+    public String getFirstValue() {
+        return Integer.toUnsignedString(firstValue);
     }
 
     public void setFirstValue(String firstValue) {
-        this.firstValue = Integer.parseUnsignedInt(firstValue);
+        this.firstValue = Integer.parseUnsignedInt(firstValue);;
     }
 
-    public int getSecondValue() {
-        return secondValue;
+    public String getSecondValue() {
+        return Integer.toUnsignedString(secondValue);
     }
 
     public void setSecondValue(String secondValue) {
         this.secondValue = Integer.parseUnsignedInt(secondValue);
     }
 
-    public int sum() {
-        int sum = firstValue + secondValue;
-        return sum;
+    public String sum() {
+        return Integer.toUnsignedString(firstValue + secondValue);
 
     }
 
-    public int dif() {
-        int dif = firstValue - secondValue;
-        return dif;
+    public String dif() {
+        return Integer.toUnsignedString(firstValue - secondValue);
     }
 
-    public int div() {
-        return Integer.divideUnsigned(firstValue, secondValue);
+    public String quotient() {
+        return Integer.toString(Integer.divideUnsigned(firstValue, secondValue));
     }
 
-    public int remainder() {
-        return Integer.remainderUnsigned(firstValue, secondValue);
+    public String remainder() {
+        return Integer.toString(Integer.remainderUnsigned(firstValue, secondValue));
     }
 
-    public int multiply() {
-        return 0;
+    public String product() {
+        return Integer.toUnsignedString(firstValue * secondValue);
     }
 
 
