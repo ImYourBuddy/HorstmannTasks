@@ -2,7 +2,6 @@ package com.mycompany.horstmann.chapter4.ex12;
 
 import com.mycompany.firsttask.shapes.Circle;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class ComparePerformance {
@@ -10,22 +9,19 @@ public class ComparePerformance {
         long startCall;
         long endCall;
         Circle testCircle = new Circle(3.3, "green");
-        Method circleMethod = null;
-        try {
-             circleMethod = Circle.class.getMethod("getArea", null);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        }
         startCall = System.nanoTime();
         testCircle.getArea();
         endCall = System.nanoTime();
         System.out.println("Regular call = " + (endCall - startCall));
         startCall = System.nanoTime();
+        Method circleMethod = null;
+        /*
+        In order not to increase the working time, i don't use null check.
+         */
         try {
+            circleMethod = Circle.class.getMethod("getArea", null);
             circleMethod.invoke(testCircle, null);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (ReflectiveOperationException e) {
             e.printStackTrace();
         }
         endCall = System.nanoTime();
